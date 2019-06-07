@@ -17,6 +17,7 @@ const Commands = {}
  */
 
 Commands.save = (editor, operation) => {
+  if (operation.type === "set_selection") { return; }
   const { operations, value } = editor
   const { data } = value
   let { save, merge } = editor.tmp
